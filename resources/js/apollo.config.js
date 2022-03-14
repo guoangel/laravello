@@ -2,7 +2,7 @@ import ApolloClient from 'apollo-boost';
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
 import { AuthError, gqlErrors } from './utils';
-//import store from "./vuex.config";
+import store from "./vuex.config";
 
 Vue.use(VueApollo);
 
@@ -17,7 +17,7 @@ const apolloClient = new ApolloClient({
       gqlErrors(err);
     } catch (err) {
       if (err instanceof AuthError) {
-        //store.dispatch("logout");
+        store.dispatch("logout");
       }
     }
   }
